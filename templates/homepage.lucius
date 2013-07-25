@@ -1,0 +1,8 @@
+h1 {
+    text-align: center
+}
+.summary {
+    font-family: monospace
+}
+
+

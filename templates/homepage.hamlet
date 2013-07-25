@@ -1,0 +1,13 @@
+<h1> Wandbox Process List
+
+<div>
+ $with (summary,procs) <- processes
+  <pre class="summary">#{summary}
+  <table border="1" class="list">
+    <tr>
+     $forall c <- head procs
+      <th aligh="center">#{c}
+    $forall proc <- tail procs
+      <tr>
+       $forall x <- proc
+        <td align="right">#{x}

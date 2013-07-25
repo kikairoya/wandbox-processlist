@@ -1,0 +1,21 @@
+Default: &defaults
+  host: "*4" # any IPv4 host
+  port: 1401
+  approot: "/webtop/test"
+  copyright: 2013 @kikairoya
+  #analytics: UA-YOURCODE
+
+Development:
+  <<: *defaults
+  port: 1402
+  approot: ""
+
+Testing:
+  <<: *defaults
+
+Staging:
+  <<: *defaults
+
+Production:
+  <<: *defaults
+  approot: "http://melpon.org/wandbox/processlist"
