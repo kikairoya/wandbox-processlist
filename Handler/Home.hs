@@ -25,7 +25,7 @@ getHomeR = do
 enumProcesses :: IO (Text,[[Text]])
 enumProcesses = do
   summary <- T.pack . foldr1 ((++) . flip (++) "\n") . take 4 . tail . lines <$> Process.readProcess "top" ["-b", "-n1", "-u", "wandbox"] ""
-  procs <- map T.words . catMaybes . map replaceCmd . lines <$> Process.readProcess "ps" ["-uwandbox", "-opid,thcount,start,cputime,pcpu,pmem,comm"] ""
+  procs <- map T.words . catMaybes . map replaceCmd . lines <$> Process.readProcess "ps" ["-uwandbox", "-opid,thcount,stime,cputime,pcpu,pmem,comm"] ""
   return (summary, procs)
   where
     replaceCmd line
